@@ -4,7 +4,25 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Footer from '@/components/Footer'
-import { FileText, Shield, Scale, Cookie, Lock, Copyright, CheckCircle, AlertTriangle, Gavel, Users, Globe, BookOpen } from 'lucide-react'
+import { FileText } from 'lucide-react'
+
+// Type definitions
+interface StatItem {
+  icon: React.ElementType
+  label: string
+  value: string
+}
+
+interface TimelineItem {
+  year: string
+  event: string
+}
+
+type ContentItem = 
+  | { type: 'text'; data: string }
+  | { type: 'stats'; data: StatItem[] }
+  | { type: 'benefits'; data: string[] }
+  | { type: 'timeline'; data: TimelineItem[] }
 
 // Sub-navigation items - Updated with new legal policy topics
 const legalSubNavigation = [
@@ -538,7 +556,7 @@ const TextContent = ({ text }: { text: string }) => (
   </div>
 )
 
-const StatsContent = ({ stats }: { stats: any[] }) => (
+const StatsContent = ({ stats }: { stats: StatItem[] }) => (
   <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
     {stats.map((stat, index) => (
       <motion.div
@@ -556,7 +574,7 @@ const StatsContent = ({ stats }: { stats: any[] }) => (
   </div>
 )
 
-const TimelineContent = ({ timeline }: { timeline: any[] }) => (
+const TimelineContent = ({ timeline }: { timeline: TimelineItem[] }) => (
   <div className="space-y-6 mb-12">
     {timeline.map((item, index) => (
       <motion.div
@@ -687,7 +705,7 @@ export default function LegalPage() {
   // Get current section content
   const currentContent = legalContent[activeSection as keyof typeof legalContent]
 
-  const renderContent = (item: any) => {
+  const renderContent = (item: ContentItem) => {
     switch (item.type) {
       case 'text':
         return <TextContent key={Math.random()} text={item.data} />
@@ -741,7 +759,7 @@ export default function LegalPage() {
           >
             {currentContent.content.map((item, index) => (
               <div key={index}>
-                {renderContent(item)}
+                {renderContent(item as ContentItem)}
               </div>
             ))}
           </motion.div>

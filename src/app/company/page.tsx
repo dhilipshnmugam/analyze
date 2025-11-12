@@ -691,7 +691,7 @@ export default function CompanyPage() {
             <div className="animate-on-scroll text-center">
               <h2 className="text-4xl md:text-5xl font-bold text-[#0A1931] mb-6">Investor Relations</h2>
               <p className="text-gray-700 leading-relaxed text-lg max-w-4xl mx-auto">
-                At Analyze Biotech Private Limited, we believe that our mission to transform healthcare diagnostics represents not just a business — but a powerful, future-ready investment opportunity. By partnering with us, investors can help drive innovation, advance global health, and capture value in one of the world's most dynamic, fast-growing sectors.
+                At Analyze Biotech Private Limited, we believe that our mission to transform healthcare diagnostics represents not just a business — but a powerful, future-ready investment opportunity. By partnering with us, investors can help drive innovation, advance global health, and capture value in one of the world&apos;s most dynamic, fast-growing sectors.
               </p>
             </div>
 
@@ -1626,7 +1626,7 @@ export default function CompanyPage() {
             {/* Main Statement */}
             <div className="text-center max-w-4xl mx-auto px-4 animate-on-scroll">
               <p className="text-xl text-gray-700 leading-relaxed">
-                Our Testimonials page celebrates the voices of our customers, partners, and healthcare professionals who have experienced the impact of Analyze Biotech's solutions firsthand. These stories serve as a powerful testament to our commitment to excellence, innovation, and long-term partnership.
+                Our Testimonials page celebrates the voices of our customers, partners, and healthcare professionals who have experienced the impact of Analyze Biotech&apos;s solutions firsthand. These stories serve as a powerful testament to our commitment to excellence, innovation, and long-term partnership.
               </p>
             </div>
 
@@ -1822,7 +1822,7 @@ export default function CompanyPage() {
             <div className="relative rounded-2xl overflow-hidden animate-on-scroll">
               <div className="px-8 py-16 text-center" style={{ background: 'linear-gradient(135deg, #0077B5 0%, #005a8c 100%)' }}>
                 <p className="text-2xl font-semibold text-white leading-relaxed max-w-4xl mx-auto">
-                  Featuring genuine voices and real outcomes, our Testimonials page reflects Analyze Biotech's unwavering commitment to customer satisfaction, continuous innovation, and empowering healthcare excellence.
+                  Featuring genuine voices and real outcomes, our Testimonials page reflects Analyze Biotech&apos;s unwavering commitment to customer satisfaction, continuous innovation, and empowering healthcare excellence.
                 </p>
               </div>
             </div>

@@ -8,8 +8,7 @@ import {
   X, 
   Phone, 
   Mail, 
-  MapPin,
-  Globe
+  MapPin
 } from 'lucide-react'
 
 // Category to route mapping

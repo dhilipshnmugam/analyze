@@ -3555,7 +3555,7 @@ const BiochemistryPage = () => {
                       </tr>
                       <tr className="hover:bg-purple-50 transition-colors">
                         <td className="px-6 py-4 font-semibold text-gray-900">Display</td>
-                        <td className="px-6 py-4 text-gray-700">7–10" Full-Color LCD Touchscreen</td>
+                        <td className="px-6 py-4 text-gray-700">7–10&quot; Full-Color LCD Touchscreen</td>
                       </tr>
                       <tr className="hover:bg-purple-50 transition-colors">
                         <td className="px-6 py-4 font-semibold text-gray-900">Storage</td>
@@ -3723,7 +3723,7 @@ const BiochemistryPage = () => {
                     Designed for <span className="font-bold text-purple-300">minimal operator dependency</span> and streamlined workflow integration, Electrosis is ideally suited for high-throughput diagnostic environments, including critical care units (CCUs), emergency departments, and clinical core laboratories. Its robust analytical algorithms and automated calibration systems minimize drift, ensuring consistent analytical fidelity, even under intensive usage.
                   </p>
                   <p className="text-lg text-white leading-relaxed">
-                    The analyzer's <span className="font-bold text-purple-300">micro-volume sampling capabilities</span>, intuitive touchscreen interface, and maintenance-free reagent pack system make it an optimal solution for modern laboratories that prioritize efficiency, traceability, and diagnostic accuracy.
+                    The analyzer&apos;s <span className="font-bold text-purple-300">micro-volume sampling capabilities</span>, intuitive touchscreen interface, and maintenance-free reagent pack system make it an optimal solution for modern laboratories that prioritize efficiency, traceability, and diagnostic accuracy.
                   </p>
                 </div>
               </motion.div>

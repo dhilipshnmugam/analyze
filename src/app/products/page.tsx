@@ -6,12 +6,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import Footer from '@/components/Footer'
-import DirectionalNavButtons from '@/components/DirectionalNavButtons'
 import { Microscope, Settings, Cpu, Shield, Users, Award, Globe, TrendingUp, Beaker, TestTube, Activity, Zap, Droplet, Leaf, HeartPulse, BarChart3, FlaskRound } from 'lucide-react'
 
 // Type definitions
 interface StatItem {
-  icon: any
+  icon: React.ElementType
   label: string
   value: string
 }
@@ -21,10 +20,11 @@ interface TimelineItem {
   event: string
 }
 
-interface ContentItem {
-  type: 'text' | 'stats' | 'benefits' | 'timeline'
-  data: string | StatItem[] | string[] | TimelineItem[]
-}
+type ContentItem = 
+  | { type: 'text'; data: string }
+  | { type: 'stats'; data: StatItem[] }
+  | { type: 'benefits'; data: string[] }
+  | { type: 'timeline'; data: TimelineItem[] }
 
 // Sub-navigation items for products sections
 const productsSubNavigation = [
@@ -584,6 +584,8 @@ const HeroSwiper = memo(({ currentSlide, setCurrentSlide }: {
   )
 })
 
+HeroSwiper.displayName = 'HeroSwiper'
+
 // Original Hero Banner Component - Now unused but kept for reference
 const HeroBanner = memo(() => {
   return (
@@ -628,11 +630,12 @@ const HeroBanner = memo(() => {
   )
 })
 
+HeroBanner.displayName = 'HeroBanner'
+
 // Sub Navigation Component - Exact same structure as Company page
-const SubNavigation = memo(({ activeSection, setActiveSection, currentSlide, setCurrentSlide }: { 
+const SubNavigation = memo(({ activeSection, setActiveSection, setCurrentSlide }: { 
   activeSection: string, 
   setActiveSection: (section: string) => void,
-  currentSlide: number,
   setCurrentSlide: React.Dispatch<React.SetStateAction<number>>
 }) => {
   
@@ -692,6 +695,8 @@ const SubNavigation = memo(({ activeSection, setActiveSection, currentSlide, set
   )
 })
 
+SubNavigation.displayName = 'SubNavigation'
+
 // Helper content rendering components - matching Company page structure
 const TextContent = memo(({ text }: { text: string }) => (
   <div className="mb-12">
@@ -700,6 +705,8 @@ const TextContent = memo(({ text }: { text: string }) => (
     </p>
   </div>
 ))
+
+TextContent.displayName = 'TextContent'
 
 const BenefitsContent = memo(({ benefits }: { benefits: string[] }) => (
   <motion.div 
@@ -724,6 +731,8 @@ const BenefitsContent = memo(({ benefits }: { benefits: string[] }) => (
   </motion.div>
 ))
 
+BenefitsContent.displayName = 'BenefitsContent'
+
 const StatsContent = memo(({ stats }: { stats: StatItem[] }) => (
   <motion.div 
     initial={{ opacity: 0, y: 20 }}
@@ -744,6 +753,8 @@ const StatsContent = memo(({ stats }: { stats: StatItem[] }) => (
   </motion.div>
 ))
 
+StatsContent.displayName = 'StatsContent'
+
 const TimelineContent = memo(({ timeline }: { timeline: TimelineItem[] }) => (
   <div className="space-y-6 mb-12">
     {timeline.map((item, index) => (
@@ -762,6 +773,8 @@ const TimelineContent = memo(({ timeline }: { timeline: TimelineItem[] }) => (
     ))}
   </div>
 ))
+
+TimelineContent.displayName = 'TimelineContent'
 
 export default function ProductsPage() {
   const router = useRouter()
@@ -792,7 +805,7 @@ export default function ProductsPage() {
       <HeroSwiper currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} />
       
       {/* Sub Navigation */}
-      <SubNavigation activeSection={activeSection} setActiveSection={setActiveSection} currentSlide={currentSlide} setCurrentSlide={setCurrentSlide} />
+      <SubNavigation activeSection={activeSection} setActiveSection={setActiveSection} setCurrentSlide={setCurrentSlide} />
       
       {/* Clinical Diagnostics Subdivision Navigation */}
       {activeSection === 'clinical-diagnostics' && (
@@ -1093,7 +1106,7 @@ export default function ProductsPage() {
                   className="space-y-6"
                 >
                   <h2 className="text-3xl md:text-4xl font-bold text-[#0A1931] mb-6">
-                    Precision Immunology for Today's Diagnostics
+                    Precision Immunology for Today&apos;s Diagnostics
                   </h2>
                   <p className="text-lg text-gray-700 leading-relaxed mb-6">
                     Analyze Biotech brings advanced Immunology and Serology solutions designed to detect critical disease markers with unmatched sensitivity and reliability. From infectious diseases to autoimmune and hormonal disorders, our portfolio enables faster and more confident clinical decision-making.
@@ -1646,9 +1659,9 @@ export default function ProductsPage() {
               transition={{ duration: 0.4 }}
               className="space-y-12"
             >
-              {currentContent.content.map((item: ContentItem, index: number) => (
+              {currentContent.content.map((item, index: number) => (
                 <div key={index}>
-                  {renderContent(item)}
+                  {renderContent(item as ContentItem)}
                 </div>
               ))}
             </motion.div>

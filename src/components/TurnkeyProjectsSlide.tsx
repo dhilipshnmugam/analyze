@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/navigation'
 import { 
@@ -142,9 +143,11 @@ const TurnkeyProjectsSlide: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="flex justify-center items-center"
             >
-              <img 
+              <Image 
                 src="/images/lab2.gif"
                 alt="Laboratory Animation"
+                width={800}
+                height={600}
                 className="w-full max-w-2xl rounded-2xl shadow-2xl"
               />
             </motion.div>

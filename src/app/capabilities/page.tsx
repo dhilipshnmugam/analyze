@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Footer from '@/components/Footer'
-import { Settings, Headphones, BookOpen, Download, Microscope, Cpu, Shield, Users, Lightbulb, Globe, GraduationCap, Smartphone, FileCheck, FileText, Award } from 'lucide-react'
+import { Settings, Headphones, BookOpen, Microscope, Cpu, Shield, Lightbulb, Globe, GraduationCap, FileCheck, FileText, Award } from 'lucide-react'
 
 // Sub-navigation items - Updated with new capabilities topics
 const capabilitiesSubNavigation = [

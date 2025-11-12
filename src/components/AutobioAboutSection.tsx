@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { MapPin, Globe, Users, Award, TrendingUp, Building2 } from 'lucide-react';
+import { Building2 } from 'lucide-react';
 import DirectionalNavButtons from './DirectionalNavButtons';
 
 const AutobioAboutSection: React.FC = () => {
@@ -27,67 +27,70 @@ const AutobioAboutSection: React.FC = () => {
   };
 
   // Global office locations for map pins
-  const globalOffices = [
-    { name: 'Chennai, India', x: 78, y: 45, isHeadquarters: true },
-    { name: 'New York, USA', x: 25, y: 35, isHeadquarters: false },
-    { name: 'London, UK', x: 52, y: 30, isHeadquarters: false },
-    { name: 'Singapore', x: 82, y: 55, isHeadquarters: false },
-    { name: 'Berlin, Germany', x: 55, y: 32, isHeadquarters: false },
-    { name: 'Tokyo, Japan', x: 88, y: 40, isHeadquarters: false },
-    { name: 'Sydney, Australia', x: 90, y: 70, isHeadquarters: false },
-    { name: 'São Paulo, Brazil', x: 32, y: 65, isHeadquarters: false }
-  ];
+  // Commented out to fix ESLint warning - can be used for future features
+  // const globalOffices = [
+  //   { name: 'Chennai, India', x: 78, y: 45, isHeadquarters: true },
+  //   { name: 'New York, USA', x: 25, y: 35, isHeadquarters: false },
+  //   { name: 'London, UK', x: 52, y: 30, isHeadquarters: false },
+  //   { name: 'Singapore', x: 82, y: 55, isHeadquarters: false },
+  //   { name: 'Berlin, Germany', x: 55, y: 32, isHeadquarters: false },
+  //   { name: 'Tokyo, Japan', x: 88, y: 40, isHeadquarters: false },
+  //   { name: 'Sydney, Australia', x: 90, y: 70, isHeadquarters: false },
+  //   { name: 'São Paulo, Brazil', x: 32, y: 65, isHeadquarters: false }
+  // ];
 
   // Company statistics
-  const companyStats = [
-    {
-      number: '10+',
-      label: 'YEARS R&D EXPERIENCE',
-      icon: <Award className="w-8 h-8" />,
-      color: 'text-blue-600'
-    },
-    {
-      number: '150+',
-      label: 'EMPLOYEES',
-      icon: <Users className="w-8 h-8" />,
-      color: 'text-green-600'
-    },
-    {
-      number: '$50M+',
-      label: 'OPERATING INCOME',
-      icon: <TrendingUp className="w-8 h-8" />,
-      color: 'text-purple-600'
-    },
-    {
-      number: '50+',
-      label: 'COUNTRIES SERVED',
-      icon: <Globe className="w-8 h-8" />,
-      color: 'text-cyan-600'
-    }
-  ];
+  // Commented out to fix ESLint warning - can be used for future features
+  // const companyStats = [
+  //   {
+  //     number: '10+',
+  //     label: 'YEARS R&D EXPERIENCE',
+  //     icon: <Award className="w-8 h-8" />,
+  //     color: 'text-blue-600'
+  //   },
+  //   {
+  //     number: '150+',
+  //     label: 'EMPLOYEES',
+  //     icon: <Users className="w-8 h-8" />,
+  //     color: 'text-green-600'
+  //   },
+  //   {
+  //     number: '$50M+',
+  //     label: 'OPERATING INCOME',
+  //     icon: <TrendingUp className="w-8 h-8" />,
+  //     color: 'text-purple-600'
+  //   },
+  //   {
+  //     number: '50+',
+  //     label: 'COUNTRIES SERVED',
+  //     icon: <Globe className="w-8 h-8" />,
+  //     color: 'text-cyan-600'
+  //   }
+  // ];
 
   // World map dots pattern
-  const generateMapDots = () => {
-    const dots = [];
-    for (let i = 0; i < 200; i++) {
-      const x = Math.random() * 100;
-      const y = Math.random() * 100;
-      const opacity = Math.random() * 0.4 + 0.1;
-      dots.push(
-        <circle
-          key={i}
-          cx={`${x}%`}
-          cy={`${y}%`}
-          r="1"
-          fill="#3b82f6"
-          opacity={opacity}
-          className="animate-pulse"
-          style={{ animationDelay: `${Math.random() * 2}s` }}
-        />
-      );
-    }
-    return dots;
-  };
+  // Commented out to fix ESLint warning - can be used for future features
+  // const generateMapDots = () => {
+  //   const dots = [];
+  //   for (let i = 0; i < 200; i++) {
+  //     const x = Math.random() * 100;
+  //     const y = Math.random() * 100;
+  //     const opacity = Math.random() * 0.4 + 0.1;
+  //     dots.push(
+  //       <circle
+  //         key={i}
+  //         cx={`${x}%`}
+  //         cy={`${y}%`}
+  //         r="1"
+  //         fill="#3b82f6"
+  //         opacity={opacity}
+  //         className="animate-pulse"
+  //         style={{ animationDelay: `${Math.random() * 2}s` }}
+  //       />
+  //     );
+  //   }
+  //   return dots;
+  // };
 
   return (
     <section className="relative h-full overflow-hidden bg-gradient-to-br from-blue-50 via-white to-cyan-50">
