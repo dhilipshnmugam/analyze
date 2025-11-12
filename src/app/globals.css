@@ -3,6 +3,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* Black & Gold Theme Variables */
+  --gold: #d97706;
+  --gold-light: #fbbf24;
+  --black-bg: #0a0a0a;
 }
 
 @theme inline {
@@ -19,8 +23,206 @@
   }
 }
 
+/* ==============================================
+   SMOOTH SCROLL - Like Autobio Website
+   ============================================== */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  overflow-x: hidden;
+  /* Page fade-in on load */
+  animation: pageLoad 0.6s ease-out;
+}
+
+@keyframes pageLoad {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Reduce overall font sizes across all components */
+.text-xs { font-size: 0.7rem; }
+.text-sm { font-size: 0.8rem; }
+.text-base { font-size: 0.9rem; }
+.text-lg { font-size: 1rem; }
+.text-xl { font-size: 1.15rem; }
+.text-2xl { font-size: 1.4rem; }
+.text-3xl { font-size: 1.7rem; }
+.text-4xl { font-size: 2rem; }
+.text-5xl { font-size: 2.5rem; }
+.text-6xl { font-size: 3rem; }
+
+/* ==============================================
+   SCROLL ANIMATIONS - Fade & Slide In
+   Elements reveal smoothly when scrolling into view
+   ============================================== */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide from left */
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-in-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Slide from right */
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.slide-in-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Scale fade */
+.scale-in {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ==============================================
+   PARALLAX EFFECT - Background Images
+   Backgrounds move slower than content
+   ============================================== */
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Mobile fallback for parallax */
+@media (max-width: 768px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+
+/* ==============================================
+   HEADER SCROLL EFFECT
+   Header gets blur and shadow on scroll
+   ============================================== */
+header.scrolled {
+  background: rgba(10, 10, 10, 0.95) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(217, 119, 6, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* ==============================================
+   GOLD THEME - Hover Effects
+   ============================================== */
+.gold-hover {
+  transition: color 0.3s ease;
+}
+
+.gold-hover:hover {
+  color: var(--gold-light);
+}
+
+.gold-underline {
+  position: relative;
+}
+
+.gold-underline::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  transition: width 0.3s ease;
+}
+
+.gold-underline:hover::after {
+  width: 100%;
+}
+
+/* ==============================================
+   SCROLL PROGRESS BAR
+   Shows page reading progress
+   ============================================== */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  z-index: 9999;
+  transition: width 0.1s ease;
+}
+
+/* ==============================================
+   PERFORMANCE OPTIMIZATIONS
+   GPU acceleration for smooth animations
+   ============================================== */
+.animate-on-scroll,
+.slide-in-left,
+.slide-in-right,
+.scale-in {
+  will-change: transform, opacity;
+}
+
+/* ==============================================
+   ACCESSIBILITY - Reduced Motion
+   ============================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+  
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+
+/* ==============================================
+   BC PRODUCT IDENTIFIERS STYLING
+   Aboreto font with Dark Gray color
+   ============================================== */
+.bc-product-id {
+  font-family: var(--font-aboreto), cursive;
+  color: #333333;
+  font-weight: 400;
 }

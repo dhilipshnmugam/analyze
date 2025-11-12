@@ -1,13 +1,35 @@
-import HeroSection from '@/components/HeroSection'
-import ProductsShowcase from '@/components/ProductsShowcase'
-import AboutSection from '@/components/AboutSection'
+import FullPage from '@/components/FullPage'
+import FixedSideBar from '@/components/FixedSideBar'
+import { 
+  HeroSection,
+  CompanyOverviewSection,
+  ProductsSection,
+  TurnkeyProjectsSection,
+  FooterSection 
+} from '@/components/Sections'
 
 export default function Home() {
+  const sections = [
+    { id: 'hero', name: 'Hero', component: HeroSection },
+    { id: 'company', name: 'Company', component: CompanyOverviewSection },
+    { id: 'products', name: 'Products', component: ProductsSection },
+    { id: 'turnkey', name: 'Turnkey Projects', component: TurnkeyProjectsSection },
+    { id: 'footer', name: 'Contact', component: FooterSection },
+  ];
+
   return (
-    <main>
-      <HeroSection />
-      <AboutSection />
-      <ProductsShowcase />
+    <main className="relative">
+      {/* Fixed Vertical Side Bar - Professional Contact & Social Tools */}
+      <FixedSideBar />
+
+      {/* FullPage Component */}
+      <FullPage 
+        sections={sections}
+        transitionType="fade"
+        transitionDuration={0.8}
+        enableKeyboard={true}
+        enableWheel={true}
+      />
     </main>
   );
 }

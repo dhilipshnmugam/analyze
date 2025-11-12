@@ -171,7 +171,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 For support and questions:
 - Create an issue in this repository
-- Email: support@analyzebiotech.com
+- Email: info@analyzebiotech.in
+- Phone: +91 9543910101
 - Documentation: [Link to detailed docs]
 
 ---

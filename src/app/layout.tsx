@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Aboreto } from "next/font/google";
 import "./globals.css";
 import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+});
+
+const aboreto = Aboreto({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-aboreto",
 });
 
 export const metadata: Metadata = {
@@ -28,10 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${aboreto.variable} font-sans antialiased`}>
         <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   );

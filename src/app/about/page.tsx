@@ -6,7 +6,6 @@ import {
   Users, 
   Award, 
   Globe, 
-  TrendingUp, 
   Heart, 
   Shield, 
   Lightbulb,
@@ -80,20 +79,23 @@ const values = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gray-50 pt-8">
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-16">
-        <div className="container mx-auto px-4">
+      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-20 pt-32">
+        <div className="container mx-auto px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
+            className="max-w-4xl"
           >
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">About AnalyzeBiotech</h1>
-            <p className="text-xl lg:text-2xl text-blue-100 leading-relaxed">
-              Transforming healthcare through innovative diagnostic solutions, 
-              empowering laboratories worldwide to deliver better patient outcomes.
+            <h2 className="text-2xl lg:text-3xl font-light text-blue-200 mb-4">About</h2>
+            <h1 className="text-5xl lg:text-7xl font-bold mb-8">Analyze Biotech</h1>
+            <p className="text-xl lg:text-2xl text-blue-100 leading-relaxed max-w-3xl">
+              Founded in 2015, Analyze Biotech has emerged as a pioneering force in biotechnology innovation, developing cutting-edge diagnostic solutions that bridge the gap between advanced science and practical healthcare applications.
+            </p>
+            <p className="text-lg lg:text-xl text-blue-100 leading-relaxed max-w-3xl mt-6">
+              Our mission is to democratize access to precision diagnostics, enabling healthcare professionals worldwide to deliver faster, more accurate results that improve patient outcomes.
             </p>
           </motion.div>
         </div>
