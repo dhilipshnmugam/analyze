@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Suspense } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,7 +8,7 @@ import { ArrowLeft, CheckCircle } from 'lucide-react'
 import { useSearchParams } from 'next/navigation'
 import Footer from '@/components/Footer'
 
-const BiochemistryPage = () => {
+const BiochemistryPageContent = () => {
   const searchParams = useSearchParams()
   const [selectedModel, setSelectedModel] = useState('bc-310')
 
@@ -3833,4 +3833,10 @@ const BiochemistryPage = () => {
   )
 }
 
-export default BiochemistryPage
+export default function BiochemistryPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <BiochemistryPageContent />
+    </Suspense>
+  )
+}

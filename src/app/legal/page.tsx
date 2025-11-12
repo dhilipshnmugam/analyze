@@ -4,7 +4,6 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Footer from '@/components/Footer'
-import { FileText } from 'lucide-react'
 
 // Type definitions
 interface StatItem {

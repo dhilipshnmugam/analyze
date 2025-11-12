@@ -1,14 +1,14 @@
 'use client'
 
 import React, { useState, memo } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Footer from '@/components/Footer'
 import { Microscope, Settings, Cpu, Shield, Users, Award, Globe, TrendingUp, Beaker, TestTube, Activity, Zap } from 'lucide-react'
 
 // Type definitions
 interface StatItem {
-  icon: any
+  icon: React.ElementType
   label: string
   value: string
 }
@@ -18,10 +18,11 @@ interface TimelineItem {
   event: string
 }
 
-interface ContentItem {
-  type: 'text' | 'stats' | 'benefits' | 'timeline'
-  data: string | StatItem[] | string[] | TimelineItem[]
-}
+type ContentItem = 
+  | { type: 'text'; data: string }
+  | { type: 'stats'; data: StatItem[] }
+  | { type: 'benefits'; data: string[] }
+  | { type: 'timeline'; data: TimelineItem[] }
 
 // Sub-navigation items for products sections
 const productsSubNavigation = [
@@ -375,6 +376,8 @@ const HeroBanner = memo(() => {
   )
 })
 
+HeroBanner.displayName = 'HeroBanner'
+
 // Sub Navigation Component - Exact same structure as Company page
 const SubNavigation = memo(({ activeSection, setActiveSection }: { 
   activeSection: string, 
@@ -430,6 +433,8 @@ const SubNavigation = memo(({ activeSection, setActiveSection }: {
   )
 })
 
+SubNavigation.displayName = 'SubNavigation'
+
 // Helper content rendering components - matching Company page structure
 const TextContent = memo(({ text }: { text: string }) => (
   <div className="mb-12">
@@ -438,6 +443,8 @@ const TextContent = memo(({ text }: { text: string }) => (
     </p>
   </div>
 ))
+
+TextContent.displayName = 'TextContent'
 
 const BenefitsContent = memo(({ benefits }: { benefits: string[] }) => (
   <motion.div 
@@ -462,6 +469,8 @@ const BenefitsContent = memo(({ benefits }: { benefits: string[] }) => (
   </motion.div>
 ))
 
+BenefitsContent.displayName = 'BenefitsContent'
+
 const StatsContent = memo(({ stats }: { stats: StatItem[] }) => (
   <motion.div 
     initial={{ opacity: 0, y: 20 }}
@@ -482,6 +491,8 @@ const StatsContent = memo(({ stats }: { stats: StatItem[] }) => (
   </motion.div>
 ))
 
+StatsContent.displayName = 'StatsContent'
+
 const TimelineContent = memo(({ timeline }: { timeline: TimelineItem[] }) => (
   <div className="space-y-6 mb-12">
     {timeline.map((item, index) => (
@@ -500,6 +511,8 @@ const TimelineContent = memo(({ timeline }: { timeline: TimelineItem[] }) => (
     ))}
   </div>
 ))
+
+TimelineContent.displayName = 'TimelineContent'
 
 export default function ProductsPage() {
   const [activeSection, setActiveSection] = useState('clinical-diagnostics')
@@ -822,9 +835,9 @@ export default function ProductsPage() {
               transition={{ duration: 0.4 }}
               className="space-y-12"
             >
-              {currentContent.content.map((item: ContentItem, index: number) => (
+              {currentContent.content.map((item, index: number) => (
                 <div key={index}>
-                  {renderContent(item)}
+                  {renderContent(item as ContentItem)}
                 </div>
               ))}
             </motion.div>

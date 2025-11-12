@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Suspense } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,7 +8,7 @@ import { ArrowLeft, CheckCircle, Zap, Layers, TestTube, Droplet, FlaskRound, The
 import { useSearchParams } from 'next/navigation'
 import Footer from '@/components/Footer'
 
-const HaematologyPage = () => {
+const HaematologyPageContent = () => {
   const searchParams = useSearchParams()
   const [selectedModel, setSelectedModel] = useState('default')
 
@@ -870,4 +870,10 @@ const HaematologyPage = () => {
   )
 }
 
-export default HaematologyPage
+export default function HaematologyPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <HaematologyPageContent />
+    </Suspense>
+  )
+}

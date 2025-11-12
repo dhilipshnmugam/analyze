@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
@@ -149,8 +149,8 @@ const SubNavigation = ({ activeSection, setActiveSection }: {
   )
 }
 
-// Main Company Page Component
-export default function CompanyPage() {
+// Main Company Page Component Content
+function CompanyPageContent() {
   const searchParams = useSearchParams()
   const sectionParam = searchParams.get('section')
   
@@ -1953,5 +1953,13 @@ export default function CompanyPage() {
       {/* Footer */}
       <Footer />
     </>
+  )
+}
+
+export default function CompanyPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <CompanyPageContent />
+    </Suspense>
   )
 }
