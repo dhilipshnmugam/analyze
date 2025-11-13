@@ -21,6 +21,14 @@ const TurnkeyProjectsSlide: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0)
   const router = useRouter()
 
+  // Images for each topic tab
+  const topicImages = [
+    "/images/lab2.gif", // Hospital Solutions
+    "/images/lab2.gif", // Lab Solutions
+    "/images/research-lab.avif", // Research & Development
+    "/images/lab2.gif", // Full Compliance Assurance
+  ]
+
   // Turnkey sub-topics for bottom navigation (simplified primary links)
   const turnkeyTopics = [
     {
@@ -144,8 +152,8 @@ const TurnkeyProjectsSlide: React.FC = () => {
               className="flex justify-center items-center"
             >
               <Image 
-                src="/images/lab2.gif"
-                alt="Laboratory Animation"
+                src={topicImages[activeTab]}
+                alt={`${currentTopic.title} Laboratory`}
                 width={800}
                 height={600}
                 className="w-full max-w-2xl rounded-2xl shadow-2xl"

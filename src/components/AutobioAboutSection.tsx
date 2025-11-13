@@ -9,7 +9,7 @@ const AutobioAboutSection: React.FC = () => {
   const [currentView, setCurrentView] = useState(0);
   const maxViews = 3; // Placeholder for future content views
 
-  // Auto-transition every 5 seconds
+  // Auto-transition every 5 seconds 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentView((prev) => (prev + 1) % maxViews);
