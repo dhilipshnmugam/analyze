@@ -1423,16 +1423,100 @@ const ServiceContent = () => {
 }
 
 // Hero Banner Component
-const HeroBanner = () => {
+const HeroBanner = ({ activeSection }: { activeSection: string }) => {
+  // Dynamic content based on active section
+  const getBannerContent = () => {
+    if (activeSection === 'service') {
+      return {
+        image: '/images/service-banner.jpg',
+        title: 'Service',
+        subtitle: 'Comprehensive Laboratory Service Solutions',
+        blur: 'blur-[1px]'
+      }
+    }
+    if (activeSection === 'supports') {
+      return {
+        image: '/images/support-banner.jpg',
+        title: 'Supports',
+        subtitle: 'Certification & Regulatory Compliance Support',
+        blur: 'blur-[1px]'
+      }
+    }
+    if (activeSection === 'knowledge-centre') {
+      return {
+        image: '/images/knowledge-banner.jpg',
+        title: 'Knowledge Centre',
+        subtitle: 'Innovation, Education, and Collaboration Hub',
+        blur: 'blur-[1px]'
+      }
+    }
+    if (activeSection === 'digital-learning-platforms') {
+      return {
+        image: '/images/digital-learning-banner.jpg',
+        title: 'Digital Learning Platforms',
+        subtitle: 'Interactive, Accessible, and Personalized Learning',
+        blur: 'blur-[1px]'
+      }
+    }
+    if (activeSection === 'skill-centre') {
+      return {
+        image: '/images/skill-center-banner.jpg',
+        title: 'Skill Centre',
+        subtitle: 'Cutting-Edge Training and Development Hubs',
+        blur: 'blur-[1px]'
+      }
+    }
+    if (activeSection === 'downloads') {
+      return {
+        image: '/images/downloads-banner.png',
+        title: 'Downloads',
+        subtitle: 'Your One-Stop Resource Hub – Anytime, Anywhere',
+        blur: 'blur-[1px]'
+      }
+    }
+    if (activeSection === 'workshops') {
+      return {
+        image: '/images/workshop-banner.jpg',
+        title: 'Workshops',
+        subtitle: 'Hands-On Learning. Real-World Impact.',
+        blur: 'blur-[1px]'
+      }
+    }
+    if (activeSection === 'media-centre') {
+      return {
+        image: '/images/media-center-banner.jpg',
+        title: 'Media Centre',
+        subtitle: 'Your Gateway to News, Insights & Corporate Communications',
+        blur: 'blur-[1px]'
+      }
+    }
+    if (activeSection === 'blogs') {
+      return {
+        image: '/images/blogs-banner.jpg',
+        title: 'Blogs',
+        subtitle: 'Insights, Innovation, and Knowledge in Healthcare & Biotechnology',
+        blur: 'blur-[1px]'
+      }
+    }
+    return {
+      image: '/images/background.jpg',
+      title: 'Capabilities',
+      subtitle: 'Comprehensive capabilities and services to support your diagnostic needs.',
+      blur: ''
+    }
+  }
+
+  const content = getBannerContent()
+
   return (
     <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-r from-[#0A1931]/85 via-[#0A1931]/75 to-teal-900/85 z-10"></div>
         <Image
-          src="/images/background.jpg"
+          src={content.image}
           alt="Capabilities and Services"
           fill
-          className="object-cover object-center"
+          className={`object-cover object-center ${content.blur}`}
           priority
         />
       </div>
@@ -1443,10 +1527,10 @@ const HeroBanner = () => {
           className="max-w-4xl mx-auto"
         >
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-serif font-bold text-gray-100 mb-8 tracking-tight">
-            Capabilities
+            {content.title}
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
-            Comprehensive capabilities and services to support your diagnostic needs.
+            {content.subtitle}
           </p>
         </motion.div>
       </div>
@@ -1603,7 +1687,7 @@ export default function CapabilitiesPage() {
   return (
     <>
       {/* Hero Banner */}
-      <HeroBanner />
+      <HeroBanner activeSection={activeSection} />
       
       {/* Sub Navigation */}
       <SubNavigation activeSection={activeSection} setActiveSection={setActiveSection} />
