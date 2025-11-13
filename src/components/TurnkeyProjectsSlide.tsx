@@ -24,9 +24,9 @@ const TurnkeyProjectsSlide: React.FC = () => {
   // Images for each topic tab
   const topicImages = [
     "/images/lab2.gif", // Hospital Solutions
-    "/images/lab2.gif", // Lab Solutions
+    "/images/laboratory-excellence.jpg", // Lab Solutions (Laboratory Excellence)
     "/images/research-lab.avif", // Research & Development
-    "/images/lab2.gif", // Full Compliance Assurance
+    "/images/compliance-assurance.jpg", // Full Compliance Assurance
   ]
 
   // Turnkey sub-topics for bottom navigation (simplified primary links)

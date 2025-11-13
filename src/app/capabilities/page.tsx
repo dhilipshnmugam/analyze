@@ -530,13 +530,13 @@ const TurnkeyContent = ({ data }: {
   const getImageSrc = (imageType: string) => {
     switch (imageType) {
       case 'hospital-design':
-        return '/images/background.jpg' // Hospital design/rendering placeholder
+        return '/images/hospital-solutions.jpg' // Isometric Laboratory Room
       case 'lab-interior':
-        return '/images/background.jpg' // Modern diagnostic lab placeholder
+        return '/images/lab-solutions-new.jpeg' // AdobeStock Lab
       case 'rd-cleanroom':
-        return '/images/background.jpg' // R&D clean room placeholder
+        return '/images/research-development-new.avif' // Blue/White Theme Room
       case 'global-compliance':
-        return '/images/background.jpg' // Global reach/compliance placeholder
+        return '/images/compliance-new.jpg' // Compliance Image
       default:
         return '/images/background.jpg'
     }
