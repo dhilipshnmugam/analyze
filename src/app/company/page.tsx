@@ -52,17 +52,88 @@ const companySubNavigation = [
 ]
 
 // Hero Banner Component
-const HeroBanner = () => {
+const HeroBanner = ({ activeSection }: { activeSection: string }) => {
+  // Dynamic banner content based on active section
+  const getBannerContent = () => {
+    switch (activeSection) {
+      case 'social-responsibilities':
+        return {
+          image: '/images/social-responsibilities-banner.jpg',
+          alt: 'Social Responsibilities - Creating Positive Impact Through Healthcare',
+          title: 'Social Responsibilities',
+          subtitle: 'Creating Positive Impact Through Healthcare'
+        }
+      case 'leadership-programme':
+        return {
+          image: '/images/leadership-programme-banner.jpg',
+          alt: 'Leadership Programme - Developing Future Leaders in Biotechnology & Healthcare',
+          title: 'Leadership Programme',
+          subtitle: 'Developing Future Leaders in Biotechnology & Healthcare'
+        }
+      case 'investor-opportunity':
+        return {
+          image: '/images/investor-opportunity-banner.jpg',
+          alt: 'Investor Opportunity - Investor Relations',
+          title: 'Investor Opportunity',
+          subtitle: 'Investor Relations'
+        }
+      case 'our-vision':
+        return {
+          image: '/images/our-vision-banner.jpg',
+          alt: 'Our Vision - Shaping the Future of Diagnostics Worldwide',
+          title: 'Our Vision',
+          subtitle: 'Shaping the Future of Diagnostics Worldwide'
+        }
+      case 'our-mission':
+        return {
+          image: '/images/our-mission-banner.jpg',
+          alt: 'Our Mission - Empowering Healthcare Professionals with Advanced Diagnostic Solutions',
+          title: 'Our Mission',
+          subtitle: 'Empowering Healthcare Professionals with Advanced Diagnostic Solutions'
+        }
+      case 'our-culture':
+        return {
+          image: '/images/our-culture-banner.jpg',
+          alt: 'Our Culture - Innovation, Collaboration, and Excellence at Every Step',
+          title: 'Our Culture',
+          subtitle: 'Innovation, Collaboration, and Excellence at Every Step'
+        }
+      case 'our-integrity':
+        return {
+          image: '/images/our-integrity-banner.jpg',
+          alt: 'Our Integrity - Building Trust Through Ethical Excellence',
+          title: 'Our Integrity',
+          subtitle: 'Building Trust Through Ethical Excellence'
+        }
+      case 'testimonials':
+        return {
+          image: '/images/testimonials-banner.jpg',
+          alt: 'Testimonials - Celebrating Customer Success Stories',
+          title: 'Testimonials',
+          subtitle: 'Celebrating Customer Success Stories'
+        }
+      default:
+        return {
+          image: '/images/company-profile-banner.jpg',
+          alt: 'Company Profile - Our Business Excellence and Innovation',
+          title: 'Company Profile',
+          subtitle: 'Delivering Excellence in Diagnostics'
+        }
+    }
+  }
+
+  const bannerContent = getBannerContent()
+
   return (
     <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-r from-[#0A1931]/85 via-[#0A1931]/75 to-teal-900/85 z-10"></div>
         <Image
-          src="/images/background.jpg"
-          alt="Corporate Offices and Business Excellence"
+          src={bannerContent.image}
+          alt={bannerContent.alt}
           fill
-          className="object-cover object-center"
+          className="object-cover object-center blur-sm"
           priority
           quality={60}
           loading="eager"
@@ -74,11 +145,10 @@ const HeroBanner = () => {
         <div className="max-w-4xl mx-auto animate-on-scroll">
           <Building2 className="w-20 h-20 mx-auto mb-6 text-amber-500" />
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-serif font-bold text-gray-100 mb-8 tracking-tight">
-            Company
+            {bannerContent.title}
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
-            Discover our commitment to excellence, innovation, and leadership in 
-            diagnostic medicine that shapes the future of healthcare.
+            {bannerContent.subtitle}
           </p>
         </div>
       </div>
@@ -1265,13 +1335,12 @@ function CompanyPageContent() {
             {/* Hero Image */}
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-2xl animate-on-scroll">
               <Image
-                src="/images/background.jpg"
-                alt="Our Culture"
+                src="/images/culture-1.jpg"
+                alt="Scientific Research Laboratory - Our Culture of Excellence"
                 fill
                 className="object-cover"
                 sizes="100vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-600/80 to-amber-600/80"></div>
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center text-white px-6">
                   <Star className="w-20 h-20 mx-auto mb-4" />
@@ -1301,13 +1370,12 @@ function CompanyPageContent() {
               </div>
               <div className="relative h-[300px] rounded-xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/background.jpg"
-                  alt="Innovation Culture"
+                  src="/images/culture-2.jpg"
+                  alt="Innovation Mindset - Creative thinking and breakthrough ideas"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-orange-900/60 to-transparent"></div>
               </div>
             </div>
 
@@ -1315,13 +1383,12 @@ function CompanyPageContent() {
             <div className="grid md:grid-cols-2 gap-8 items-center animate-on-scroll md:grid-flow-dense">
               <div className="relative h-[300px] rounded-xl overflow-hidden shadow-xl md:col-start-1 md:row-start-1">
                 <Image
-                  src="/images/background.jpg"
-                  alt="Collaboration"
+                  src="/images/culture-3.jpg"
+                  alt="Collaboration and Respect - Teamwork and inclusive culture"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-orange-900/60 to-transparent"></div>
               </div>
               <div className="bg-gradient-to-br from-orange-50 to-amber-50 p-8 rounded-xl shadow-lg border-l-4 border-orange-600 md:col-start-2">
                 <div className="flex items-center mb-4">
@@ -1358,13 +1425,12 @@ function CompanyPageContent() {
               </div>
               <div className="relative h-[300px] rounded-xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/background.jpg"
-                  alt="Excellence"
+                  src="/images/culture-4.jpg"
+                  alt="Company Culture - Excellence in healthcare innovation"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-orange-900/60 to-transparent"></div>
               </div>
             </div>
 
@@ -1372,13 +1438,12 @@ function CompanyPageContent() {
             <div className="grid md:grid-cols-2 gap-8 items-center animate-on-scroll md:grid-flow-dense">
               <div className="relative h-[300px] rounded-xl overflow-hidden shadow-xl md:col-start-1 md:row-start-1">
                 <Image
-                  src="/images/background.jpg"
-                  alt="Learning and Growth"
+                  src="/images/culture-5.jpg"
+                  alt="Learning and Growth - Professional development and advancement"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-orange-900/60 to-transparent"></div>
               </div>
               <div className="bg-gradient-to-br from-orange-50 to-amber-50 p-8 rounded-xl shadow-lg border-l-4 border-orange-600 md:col-start-2">
                 <div className="flex items-center mb-4">
@@ -1425,15 +1490,9 @@ function CompanyPageContent() {
               </p>
             </div>
 
-            {/* Hero Image */}
-            <div className="relative h-[500px] rounded-2xl overflow-hidden animate-on-scroll">
-              <Image
-                src="/images/company-integrity-hero.jpg"
-                alt="Our Integrity"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0077B5]/80 to-[#0077B5]/60 flex items-center justify-center">
+            {/* Hero Section */}
+            <div className="relative h-[500px] rounded-2xl overflow-hidden animate-on-scroll" style={{ backgroundColor: '#0077B5' }}>
+              <div className="absolute inset-0 flex items-center justify-center">
                 <h3 className="text-5xl font-bold text-white">Our Integrity</h3>
               </div>
             </div>
@@ -1466,12 +1525,11 @@ function CompanyPageContent() {
               </div>
               <div className="relative h-[400px] rounded-xl overflow-hidden">
                 <Image
-                  src="/images/ethical-conduct.jpg"
-                  alt="Ethical Conduct"
+                  src="/images/integrity-1.jpg"
+                  alt="Ethical Conduct - Upholding professional standards"
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0077B5]/60 to-transparent"></div>
               </div>
             </div>
 
@@ -1479,12 +1537,11 @@ function CompanyPageContent() {
             <div className="grid md:grid-cols-2 gap-12 items-center animate-on-scroll">
               <div className="relative h-[400px] rounded-xl overflow-hidden order-2 md:order-1">
                 <Image
-                  src="/images/transparency.jpg"
-                  alt="Transparency"
+                  src="/images/integrity-2.jpg"
+                  alt="Transparency - Open and clear communication"
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0077B5]/60 to-transparent"></div>
               </div>
               <div className="space-y-6 order-1 md:order-2">
                 <div className="flex items-center gap-4">
@@ -1528,12 +1585,11 @@ function CompanyPageContent() {
               </div>
               <div className="relative h-[400px] rounded-xl overflow-hidden">
                 <Image
-                  src="/images/quality-compliance.jpg"
-                  alt="Quality & Compliance"
+                  src="/images/integrity-3.jpg"
+                  alt="Quality and Compliance - Adhering to global standards"
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0077B5]/60 to-transparent"></div>
               </div>
             </div>
 
@@ -1541,12 +1597,11 @@ function CompanyPageContent() {
             <div className="grid md:grid-cols-2 gap-12 items-center animate-on-scroll">
               <div className="relative h-[400px] rounded-xl overflow-hidden order-2 md:order-1">
                 <Image
-                  src="/images/respect-responsibility.jpg"
-                  alt="Respect & Responsibility"
+                  src="/images/integrity-4.jpg"
+                  alt="Respect and Responsibility - Championing dignity and fairness"
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0077B5]/60 to-transparent"></div>
               </div>
               <div className="space-y-6 order-1 md:order-2">
                 <div className="flex items-center gap-4">
@@ -1590,12 +1645,11 @@ function CompanyPageContent() {
               </div>
               <div className="relative h-[400px] rounded-xl overflow-hidden">
                 <Image
-                  src="/images/accountability.jpg"
-                  alt="Accountability"
+                  src="/images/integrity-5.jpg"
+                  alt="Accountability - Empowering teams to uphold principles"
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0077B5]/60 to-transparent"></div>
               </div>
             </div>
 
@@ -1620,15 +1674,9 @@ function CompanyPageContent() {
               </p>
             </div>
 
-            {/* Hero Image */}
-            <div className="relative h-[500px] rounded-2xl overflow-hidden animate-on-scroll">
-              <Image
-                src="/images/testimonials-hero.jpg"
-                alt="Customer Testimonials"
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0077B5]/80 to-[#0077B5]/60 flex items-center justify-center">
+            {/* Hero Section */}
+            <div className="relative h-[500px] rounded-2xl overflow-hidden animate-on-scroll" style={{ backgroundColor: '#0077B5' }}>
+              <div className="absolute inset-0 flex items-center justify-center">
                 <h3 className="text-5xl font-bold text-white">Our Testimonials</h3>
               </div>
             </div>
@@ -1654,12 +1702,11 @@ function CompanyPageContent() {
               </div>
               <div className="relative h-[400px] rounded-xl overflow-hidden">
                 <Image
-                  src="/images/customer-quotes.jpg"
-                  alt="Authentic Customer Quotes"
+                  src="/images/testimonial-1.jpg"
+                  alt="Authentic Customer Quotes - Inspirational service feedback"
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0077B5]/60 to-transparent"></div>
               </div>
             </div>
 
@@ -1667,12 +1714,11 @@ function CompanyPageContent() {
             <div className="grid md:grid-cols-2 gap-12 items-center animate-on-scroll">
               <div className="relative h-[400px] rounded-xl overflow-hidden order-2 md:order-1">
                 <Image
-                  src="/images/case-studies.jpg"
-                  alt="Case Studies & Success Stories"
+                  src="/images/testimonial-2.jpg"
+                  alt="Case Studies and Success Stories - SEO illustration methodology"
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0077B5]/60 to-transparent"></div>
               </div>
               <div className="space-y-6 order-1 md:order-2">
                 <div className="flex items-center gap-4">
@@ -1702,12 +1748,11 @@ function CompanyPageContent() {
               </div>
               <div className="relative h-[400px] rounded-xl overflow-hidden">
                 <Image
-                  src="/images/video-testimonials.jpg"
-                  alt="Video Testimonials"
+                  src="/images/testimonial-3.jpg"
+                  alt="Video Testimonials - Engaging customer interviews"
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0077B5]/60 to-transparent"></div>
               </div>
             </div>
 
@@ -1715,12 +1760,11 @@ function CompanyPageContent() {
             <div className="grid md:grid-cols-2 gap-12 items-center animate-on-scroll">
               <div className="relative h-[400px] rounded-xl overflow-hidden order-2 md:order-1">
                 <Image
-                  src="/images/industry-recognition.jpg"
-                  alt="Industry Recognition"
+                  src="/images/testimonial-4.jpg"
+                  alt="Industry Recognition - Employee recognition and excellence"
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0077B5]/60 to-transparent"></div>
               </div>
               <div className="space-y-6 order-1 md:order-2">
                 <div className="flex items-center gap-4">
@@ -1750,12 +1794,11 @@ function CompanyPageContent() {
               </div>
               <div className="relative h-[400px] rounded-xl overflow-hidden">
                 <Image
-                  src="/images/diverse-perspectives.jpg"
-                  alt="Diverse Perspectives"
+                  src="/images/testimonial-5.jpg"
+                  alt="Diverse Perspectives - Multiple viewpoints and inclusivity"
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0077B5]/60 to-transparent"></div>
               </div>
             </div>
 
@@ -1902,7 +1945,7 @@ function CompanyPageContent() {
       <div id="company-scroll-progress" className="fixed top-0 left-0 h-1 bg-gradient-to-r from-amber-500 to-yellow-400 z-50" style={{ width: '0%' }} />
       
       {/* Hero Banner */}
-      <HeroBanner />
+      <HeroBanner activeSection={activeTab} />
       
       {/* Sub Navigation */}
       <SubNavigation activeSection={activeTab} setActiveSection={setActiveTab} />
