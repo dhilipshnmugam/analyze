@@ -53,11 +53,11 @@ export const HeroSection: React.FC = () => {
     }
   ];
 
-  // Auto-transition every 5 seconds
+  // Auto-transition every 6 seconds (slightly longer for better UX)
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentView((prev) => (prev + 1) % heroSlides.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 6000); // Change slide every 6 seconds
 
     return () => clearInterval(timer); // Cleanup on unmount
   }, [heroSlides.length]);
@@ -74,41 +74,43 @@ export const HeroSection: React.FC = () => {
     <section className="relative h-full flex items-center justify-center overflow-hidden">
       {/* Hero Background Image */}
       <div className="absolute inset-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/images/graphic-illustration-light-blue-wallpaper-template-website-cover-background-design_545033-2371.jpg')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
+        <Image
+          src="/images/graphic-illustration-light-blue-wallpaper-template-website-cover-background-design_545033-2371.jpg"
+          alt="Hero background"
+          fill
+          className="object-cover object-center"
+          priority
+          quality={75}
+          sizes="100vw"
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkrHw/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAhEQACAQIHAQAAAAAAAAAAAAABAgADBAUREiExQVFhkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT3k/VEfEU95P1QbqFhC0Dc8/npRWg+6WwA/dgWDGOSvB2kYwBAomwkjGWd6/5QEBZEZ7n6VQ7D5jW9pWy2rbqBvexKOMdK8M4Qhqy4Q4jvQ=="
         />
         {/* Subtle overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/10" />
+        <div className="absolute inset-0 bg-black/10 z-10" />
       </div>
 
-      <div className="container mx-auto px-6 z-10">
+      <div className="container mx-auto px-4 sm:px-6 z-10">
         {/* Animated Sub-Slide Content */}
         <AnimatePresence mode="wait">
           <motion.div
             key={currentView}
-            initial={{ opacity: 0, x: 100 }}
+            initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.6, ease: 'easeInOut' }}
-            className="grid lg:grid-cols-2 gap-8 items-center px-8 lg:px-16"
+            exit={{ opacity: 0, x: -50 }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
+            className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 items-center px-4 sm:px-6 lg:px-16"
           >
             {/* Left Content */}
-            <div className="text-left">
+            <div className="text-center lg:text-left order-2 lg:order-1">
               {/* BIOTRA Branding - Always Visible */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex flex-col items-start mb-4"
+                transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
+                className="flex flex-col items-center lg:items-start mb-3 sm:mb-4"
               >
                 <h1
-                  className="text-6xl lg:text-8xl font-aboreto font-extrabold mb-2"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-aboreto font-extrabold mb-2"
                   style={{ color: '#FFFFFF', fontFamily: 'var(--font-aboreto), cursive', letterSpacing: '2px' }}
                 >
                   BIOTRA
@@ -117,10 +119,10 @@ export const HeroSection: React.FC = () => {
 
               {/* Main Title - BC Models with Aboreto Font */}
               <motion.h2
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="font-bold mb-6 leading-tight text-left"
+                transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
+                className="font-bold mb-4 sm:mb-6 leading-tight text-center lg:text-left"
               >
                 <span 
                   className={`block font-aboreto`}
@@ -129,7 +131,7 @@ export const HeroSection: React.FC = () => {
                     letterSpacing: '0.1em',
                     fontWeight: '900',
                     fontFamily: 'var(--font-aboreto), cursive',
-                    fontSize: '14px'
+                    fontSize: '12px'
                   }}
                 >
                   {heroSlides[currentView].title[0]}
@@ -148,37 +150,45 @@ export const HeroSection: React.FC = () => {
 
               {/* Description Text */}
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="text-base lg:text-lg text-gray-700 leading-relaxed mb-6 text-left max-w-xl"
+                transition={{ duration: 0.4, delay: 0.25, ease: "easeOut" }}
+                className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed mb-4 sm:mb-6 text-center lg:text-left max-w-xl mx-auto lg:mx-0 px-2 sm:px-0"
               >
                 {heroSlides[currentView].description}
               </motion.p>
 
               {/* Learn More Button */}
-              <motion.button
-                initial={{ opacity: 0, y: 20 }}
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => router.push(heroSlides[currentView].link)}
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+                transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
+                className="flex justify-center lg:justify-start"
               >
-                Learn More
-              </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => router.push(heroSlides[currentView].link)}
+                  className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer text-sm sm:text-base"
+                >
+                  Learn More
+                </motion.button>
+              </motion.div>
             </div>
-            {/* Right Content (Image) - Larger Size */}
-            <div className="flex justify-center lg:justify-end items-center lg:pr-8">
+            {/* Right Content (Image) - Responsive Size */}
+            <div className="flex justify-center lg:justify-end items-center lg:pr-8 order-1 lg:order-2">
               <Image
                 src={heroSlides[currentView].image}
                 alt={heroSlides[currentView].imageAlt}
                 width={900}
                 height={650}
-                
-                className="rounded-xl object-contain w-full max-w-[900px]"
-                priority
+                className="rounded-xl object-contain w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[900px] transition-transform duration-300 hover:scale-105"
+                priority={currentView === 0}
+                loading={currentView === 0 ? 'eager' : 'lazy'}
+                quality={85}
+                sizes="(max-width: 640px) 300px, (max-width: 768px) 400px, (max-width: 1024px) 500px, 900px"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkrHw/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAhEQACAQIHAQAAAAAAAAAAAAABAgADBAUREiExQVFhkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT3k/VEfEU95P1QbqFhC0Dc8/npRWg+6WwA/dgWDGOSvB2kYwBAomwkjGWd6/5QEBZEZ7n6VQ7D5jW9pWy2rbqBvexKOMdK8M4Qhqy4Q4jvQ=="
               />
             </div>
             <div className="absolute inset-0 bg-gradient-to-r from-teal-500/20 to-cyan-500/20 blur-3xl -z-10 scale-110"></div>
@@ -187,13 +197,13 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* Bottom Center - Page Indicator and Navigation */}
-      <div className="absolute bottom-16 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center gap-3">
+      <div className="absolute bottom-8 sm:bottom-12 lg:bottom-16 left-1/2 -translate-x-1/2 z-50 flex flex-col items-center gap-2 sm:gap-3">
         {/* Page Indicator */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="text-sm text-gray-400 font-semibold tracking-wider mb-1"
+          transition={{ delay: 0.4, duration: 0.3, ease: "easeOut" }}
+          className="text-xs sm:text-sm text-gray-400 font-semibold tracking-wider mb-1"
         >
           {currentView + 1} / {heroSlides.length}
         </motion.div>

@@ -40,9 +40,9 @@ export default function DirectionalNavButtons({
 }: DirectionalNavButtonsProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, delay: 0.3 }}
+      transition={{ duration: 0.3, delay: 0.2, ease: "easeOut" }}
       className={`inline-flex items-center bg-black/70 backdrop-blur-md rounded-lg shadow-2xl border border-white/10 ${className}`}
     >
       {/* Previous Button (Left Arrow) */}
@@ -52,10 +52,10 @@ export default function DirectionalNavButtons({
         whileHover={!disablePrevious ? { scale: 1.05 } : {}}
         whileTap={!disablePrevious ? { scale: 0.95 } : {}}
         className={`
-          group relative px-6 py-4 transition-all duration-300
+          group relative px-4 py-3 sm:px-6 sm:py-4 transition-all duration-200 min-w-[44px] min-h-[44px] flex items-center justify-center
           ${disablePrevious 
             ? 'opacity-40 cursor-not-allowed' 
-            : 'hover:bg-amber-400/20 cursor-pointer'
+            : 'hover:bg-amber-400/20 cursor-pointer active:bg-amber-400/30'
           }
         `}
         aria-label="Previous"
@@ -63,7 +63,7 @@ export default function DirectionalNavButtons({
       >
         <ChevronLeft
           className={`
-            w-5 h-5 transition-colors duration-300
+            w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-200
             ${disablePrevious 
               ? 'text-gray-500' 
               : 'text-gray-300 group-hover:text-amber-400'
@@ -83,10 +83,10 @@ export default function DirectionalNavButtons({
         whileHover={!disableNext ? { scale: 1.05 } : {}}
         whileTap={!disableNext ? { scale: 0.95 } : {}}
         className={`
-          group relative px-6 py-4 transition-all duration-300
+          group relative px-4 py-3 sm:px-6 sm:py-4 transition-all duration-200 min-w-[44px] min-h-[44px] flex items-center justify-center
           ${disableNext 
             ? 'opacity-40 cursor-not-allowed' 
-            : 'hover:bg-amber-400/20 cursor-pointer'
+            : 'hover:bg-amber-400/20 cursor-pointer active:bg-amber-400/30'
           }
         `}
         aria-label="Next"
@@ -94,7 +94,7 @@ export default function DirectionalNavButtons({
       >
         <ChevronRight
           className={`
-            w-5 h-5 transition-colors duration-300
+            w-4 h-4 sm:w-5 sm:h-5 transition-colors duration-200
             ${disableNext 
               ? 'text-gray-500' 
               : 'text-gray-300 group-hover:text-amber-400'

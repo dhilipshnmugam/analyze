@@ -522,10 +522,15 @@ const HeroSwiper = memo(({ currentSlide, setCurrentSlide }: {
                     currentCategory.id === 'clinical-diagnostics' || currentCategory.id === 'advanced-andrology' 
                       ? 'w-[500px]' 
                       : 'w-[700px]'
-                  } h-auto drop-shadow-2xl ${
+                  } h-auto drop-shadow-2xl transition-transform duration-300 hover:scale-105 ${
                     currentCategory.id === 'sample-tracking' ? 'blur-[2px]' : ''
                   }`}
-                  priority
+                  priority={currentSlide === 0}
+                  loading={currentSlide === 0 ? 'eager' : 'lazy'}
+                  quality={85}
+                  sizes="(max-width: 768px) 300px, (max-width: 1024px) 500px, 700px"
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkrHw/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAhEQACAQIHAQAAAAAAAAAAAAABAgADBAUREiExQVFhkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT3k/VEfEU95P1QbqFhC0Dc8/npRWg+6WwA/dgWDGOSvB2kYwBAomwkjGWd6/5QEBZEZ7n6VQ7D5jW9pWy2rbqBvexKOMdK8M4Qhqy4Q4jvQ=="
                 />
                 {/* Glow effect */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${currentCategory.color} opacity-20 blur-3xl -z-10`} />
@@ -589,7 +594,7 @@ HeroSwiper.displayName = 'HeroSwiper'
 // Original Hero Banner Component - Now unused but kept for reference
 const HeroBanner = memo(() => {
   return (
-    <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
       {/* Background Image with Blur and Overlay */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900/70 via-cyan-900/60 to-slate-800/70 z-10"></div>
@@ -604,17 +609,17 @@ const HeroBanner = memo(() => {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-20 container mx-auto px-6 text-center">
+      <div className="relative z-20 container mx-auto px-4 sm:px-6 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-serif font-bold text-gray-100 mb-8 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-gray-100 mb-4 sm:mb-6 md:mb-8 tracking-tight">
             Products
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-2xl mx-auto px-2">
             Discover our comprehensive range of innovative medical diagnostic solutions designed to enhance laboratory efficiency and transform patient care.
           </p>
         </motion.div>
@@ -646,8 +651,8 @@ const SubNavigation = memo(({ activeSection, setActiveSection, setCurrentSlide }
 
   return (
     <section className="sticky top-0 z-40 bg-gray-50/95 backdrop-blur-md border-b-2 border-gray-200 shadow-sm">
-      <div className="container mx-auto px-6 py-4">
-        <nav className="flex flex-wrap justify-center gap-2">
+      <div className="container mx-auto px-2 sm:px-4 md:px-6 py-3 md:py-4">
+        <nav className="flex flex-wrap justify-center gap-1 sm:gap-2 overflow-x-auto scrollbar-hide">
           {productsSubNavigation.map((item, index) => (
             <motion.button
               key={item.id}
@@ -655,7 +660,7 @@ const SubNavigation = memo(({ activeSection, setActiveSection, setCurrentSlide }
               whileTap={{ scale: 0.98 }}
               onClick={() => setActiveSection(item.id)}
               onMouseEnter={() => handleMouseEnter(index)}
-              className={`relative px-4 py-3 font-semibold text-sm transition-all duration-300 rounded-t-lg overflow-hidden ${
+              className={`relative px-2 sm:px-3 md:px-4 py-2 md:py-3 font-semibold text-xs sm:text-sm transition-all duration-300 rounded-t-lg overflow-hidden whitespace-nowrap ${
                 activeSection === item.id
                   ? 'text-[#0A1931] bg-white shadow-md'
                   : 'text-gray-600 hover:text-[#0A1931] hover:bg-white/50'
@@ -839,8 +844,8 @@ export default function ProductsPage() {
       
       {/* Biochemistry Special Content */}
       {activeSection === 'clinical-diagnostics' && selectedModel === 'biochemistry' && (
-        <section className="py-16 bg-gradient-to-br from-gray-50 to-white relative overflow-visible">
-          <div className="container mx-auto px-6 relative">
+        <section className="py-8 sm:py-12 md:py-16 bg-gradient-to-br from-gray-50 to-white relative overflow-visible">
+          <div className="container mx-auto px-4 sm:px-6 relative">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

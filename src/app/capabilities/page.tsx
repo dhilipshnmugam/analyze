@@ -1498,6 +1498,14 @@ const HeroBanner = ({ activeSection }: { activeSection: string }) => {
         blur: 'blur-[1px]'
       }
     }
+    if (activeSection === 'turnkey-projects') {
+      return {
+        image: '/images/turnkey-banner.jpg',
+        title: 'Turnkey Projects',
+        subtitle: 'Building Future-Ready Healthcare Ecosystems',
+        blur: 'blur-[1px]'
+      }
+    }
     return {
       image: '/images/background.jpg',
       title: 'Capabilities',
@@ -1509,27 +1517,33 @@ const HeroBanner = ({ activeSection }: { activeSection: string }) => {
   const content = getBannerContent()
 
   return (
-    <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[50vh] sm:h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-r from-[#0A1931]/85 via-[#0A1931]/75 to-teal-900/85 z-10"></div>
         <Image
           src={content.image}
-          alt="Capabilities and Services"
+          alt={content.title}
           fill
-          className={`object-cover object-center ${content.blur}`}
-          priority
+          className={`object-cover object-center transition-all duration-500 ${content.blur}`}
+          priority={activeSection === 'service'}
+          loading={activeSection === 'service' ? 'eager' : 'lazy'}
+          quality={85}
+          sizes="100vw"
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkrHw/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAhEQACAQIHAQAAAAAAAAAAAAABAgADBAUREiExQVFhkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT3k/VEfEU95P1QbqFhC0Dc8/npRWg+6WwA/dgWDGOSvB2kYwBAomwkjGWd6/5QEBZEZ7n6VQ7D5jW9pWy2rbqBvexKOMdK8M4Qhqy4Q4jvQ=="
         />
       </div>
-      <div className="relative z-20 container mx-auto px-6 text-center">
+      <div className="relative z-20 container mx-auto px-4 sm:px-6 text-center">
         <motion.div
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-serif font-bold text-gray-100 mb-8 tracking-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold text-gray-100 mb-4 sm:mb-6 md:mb-8 tracking-tight leading-tight">
             {content.title}
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-gray-300 leading-relaxed max-w-2xl mx-auto px-2">
             {content.subtitle}
           </p>
         </motion.div>
@@ -1545,15 +1559,15 @@ const SubNavigation = ({ activeSection, setActiveSection }: {
 }) => {
   return (
     <section className="sticky top-0 z-40 bg-gray-50/95 backdrop-blur-md border-b-2 border-gray-200 shadow-sm">
-      <div className="container mx-auto px-6 py-4">
-        <nav className="flex flex-wrap justify-center gap-2">
+      <div className="container mx-auto px-2 sm:px-4 md:px-6 py-3 md:py-4">
+        <nav className="flex flex-wrap justify-center gap-1 sm:gap-2 max-w-full overflow-x-auto scrollbar-hide">
           {capabilitiesSubNavigation.map((item) => (
             <motion.button
               key={item.id}
               whileHover={{ scale: 1.02, y: -1 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => setActiveSection(item.id)}
-              className={`relative px-4 py-3 font-semibold text-sm transition-all duration-300 rounded-t-lg overflow-hidden ${
+              className={`relative px-2 sm:px-3 md:px-4 py-2 md:py-3 font-semibold text-xs sm:text-sm transition-all duration-300 rounded-t-lg overflow-hidden whitespace-nowrap ${
                 activeSection === item.id
                   ? 'text-[#0A1931] bg-white shadow-md'
                   : 'text-gray-600 hover:text-[#0A1931] hover:bg-white/50'
@@ -1693,22 +1707,22 @@ export default function CapabilitiesPage() {
       <SubNavigation activeSection={activeSection} setActiveSection={setActiveSection} />
       
       {/* Main Content Area */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6">
+      <section className="py-8 sm:py-12 md:py-16 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
           {/* Section Header */}
           <motion.div
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-12 md:mb-16"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-[#0A1931] mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#0A1931] mb-4 md:mb-6">
               {currentContent.title}
             </h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-6"></div>
-            <h2 className="text-2xl text-gray-700 font-semibold mb-4">
+            <div className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 mx-auto mb-4 md:mb-6"></div>
+            <h2 className="text-lg sm:text-xl md:text-2xl text-gray-700 font-semibold mb-3 md:mb-4 px-2">
               {currentContent.subtitle}
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed px-2">
               {currentContent.description}
             </p>
           </motion.div>

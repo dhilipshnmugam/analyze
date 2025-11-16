@@ -17,66 +17,66 @@ const Footer = () => {
   return (
     <footer className="text-white" style={{ backgroundColor: '#0077B5' }}>
       {/* Main Footer Content */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Company Info */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6 sm:col-span-2 lg:col-span-1">
             <div>
-              <h3 className="text-xl font-bold">AnalyzeBiotech</h3>
+              <h3 className="text-lg sm:text-xl font-bold">AnalyzeBiotech</h3>
               <p className="text-sm text-gray-400">Advanced Diagnostics</p>
             </div>
             
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
               Leading the future of in vitro diagnostics with cutting-edge technology, 
               precision instruments, and comprehensive solutions for laboratories worldwide.
             </p>
             
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3">
-                <Phone size={16} className="text-blue-400" />
-                <span className="text-gray-300">+91 9543910101</span>
+            <div className="space-y-2 sm:space-y-3">
+              <div className="flex items-center space-x-2 sm:space-x-3">
+                <Phone size={14} className="text-blue-400 flex-shrink-0" />
+                <span className="text-sm sm:text-base text-gray-300">+91 9543910101</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <Phone size={16} className="text-blue-400" />
-                <span className="text-gray-300">+91 8144418046</span>
+              <div className="flex items-center space-x-2 sm:space-x-3">
+                <Phone size={14} className="text-blue-400 flex-shrink-0" />
+                <span className="text-sm sm:text-base text-gray-300">+91 8144418046</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <Mail size={16} className="text-blue-400" />
-                <span className="text-gray-300">Sales@analyzebiotech.in</span>
+              <div className="flex items-center space-x-2 sm:space-x-3">
+                <Mail size={14} className="text-blue-400 flex-shrink-0" />
+                <span className="text-sm sm:text-base text-gray-300 break-all">Sales@analyzebiotech.in</span>
               </div>
-              <div className="flex items-center space-x-3">
-                <MapPin size={16} className="text-blue-400" />
-                <span className="text-gray-300">1/51, Barathiyar Street, Mundiyampakkam, TamilNadu, India - 605601</span>
+              <div className="flex items-start space-x-2 sm:space-x-3">
+                <MapPin size={14} className="text-blue-400 flex-shrink-0 mt-0.5" />
+                <span className="text-sm sm:text-base text-gray-300 leading-relaxed">1/51, Barathiyar Street, Mundiyampakkam, TamilNadu, India - 605601</span>
               </div>
             </div>
           </div>
 
           {/* Products */}
-          <div className="space-y-6">
-            <h4 className="text-lg font-semibold text-white">Products</h4>
-            <ul className="space-y-3">
+          <div className="space-y-4 sm:space-y-6">
+            <h4 className="text-base sm:text-lg font-semibold text-white">Products</h4>
+            <ul className="space-y-2 sm:space-y-3">
               <li>
-                <Link href="/products#clinical-diagnostics" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link href="/products#clinical-diagnostics" className="text-sm sm:text-base text-gray-300 hover:text-blue-400 transition-colors">
                   Clinical Diagnostics
                 </Link>
               </li>
               <li>
-                <Link href="/products#medical-imaging" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link href="/products#medical-imaging" className="text-sm sm:text-base text-gray-300 hover:text-blue-400 transition-colors duration-200">
                   Medical Imaging
                 </Link>
               </li>
               <li>
-                <Link href="/products#advanced-andrology" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link href="/products#advanced-andrology" className="text-sm sm:text-base text-gray-300 hover:text-blue-400 transition-colors duration-200">
                   Advanced Andrology
                 </Link>
               </li>
               <li>
-                <Link href="/products#critical-care" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link href="/products#critical-care" className="text-sm sm:text-base text-gray-300 hover:text-blue-400 transition-colors duration-200">
                   Critical Care
                 </Link>
               </li>
               <li>
-                <Link href="/products#sample-tracking" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link href="/products#sample-tracking" className="text-sm sm:text-base text-gray-300 hover:text-blue-400 transition-colors duration-200">
                   Sample Tracking
                 </Link>
               </li>
@@ -90,31 +90,31 @@ const Footer = () => {
           </div>
 
           {/* Solutions & Services */}
-          <div className="space-y-6">
-            <h4 className="text-lg font-semibold text-white">Solutions & Services</h4>
-            <ul className="space-y-3">
+          <div className="space-y-4 sm:space-y-6">
+            <h4 className="text-base sm:text-lg font-semibold text-white">Solutions & Services</h4>
+            <ul className="space-y-2 sm:space-y-3">
               <li>
                 <Link href="/capabilities#turnkey-projects" className="text-gray-300 hover:text-blue-400 transition-colors">
                   Turnkey Projects
                 </Link>
               </li>
               <li>
-                <Link href="/capabilities#service" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link href="/capabilities#service" className="text-sm sm:text-base text-gray-300 hover:text-blue-400 transition-colors duration-200">
                   Service Solutions
                 </Link>
               </li>
               <li>
-                <Link href="/capabilities#supports" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link href="/capabilities#supports" className="text-sm sm:text-base text-gray-300 hover:text-blue-400 transition-colors duration-200">
                   Technical Support
                 </Link>
               </li>
               <li>
-                <Link href="/capabilities#workshops" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link href="/capabilities#workshops" className="text-sm sm:text-base text-gray-300 hover:text-blue-400 transition-colors duration-200">
                   Training Programs
                 </Link>
               </li>
               <li>
-                <Link href="/itsolutions" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link href="/itsolutions" className="text-sm sm:text-base text-gray-300 hover:text-blue-400 transition-colors duration-200">
                   IT Solutions
                 </Link>
               </li>
@@ -122,36 +122,36 @@ const Footer = () => {
           </div>
 
           {/* Company & News */}
-          <div className="space-y-6">
-            <h4 className="text-lg font-semibold text-white">Company</h4>
-            <ul className="space-y-3">
+          <div className="space-y-4 sm:space-y-6">
+            <h4 className="text-base sm:text-lg font-semibold text-white">Company</h4>
+            <ul className="space-y-2 sm:space-y-3">
               <li>
-                <Link href="/company#company-profile" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link href="/company#company-profile" className="text-sm sm:text-base text-gray-300 hover:text-blue-400 transition-colors duration-200">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/capabilities#media-centre" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link href="/capabilities#media-centre" className="text-sm sm:text-base text-gray-300 hover:text-blue-400 transition-colors duration-200">
                   News & Events
                 </Link>
               </li>
               <li>
-                <Link href="/company#leadership-programme" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link href="/company#leadership-programme" className="text-sm sm:text-base text-gray-300 hover:text-blue-400 transition-colors duration-200">
                   Careers
                 </Link>
               </li>
               <li>
-                <Link href="/company#investor-opportunity" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link href="/company#investor-opportunity" className="text-sm sm:text-base text-gray-300 hover:text-blue-400 transition-colors duration-200">
                   Investors
                 </Link>
               </li>
               <li>
-                <Link href="/company#social-responsibilities" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link href="/company#social-responsibilities" className="text-sm sm:text-base text-gray-300 hover:text-blue-400 transition-colors duration-200">
                   Sustainability
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <Link href="/contact" className="text-sm sm:text-base text-gray-300 hover:text-blue-400 transition-colors duration-200">
                   Contact Us
                 </Link>
               </li>

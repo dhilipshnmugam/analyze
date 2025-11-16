@@ -81,20 +81,20 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-20 pt-32">
-        <div className="container mx-auto px-6 lg:px-12">
+      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white py-12 sm:py-16 md:py-20 pt-20 sm:pt-24 md:pt-32">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="max-w-4xl"
           >
-            <h2 className="text-2xl lg:text-3xl font-light text-blue-200 mb-4">About</h2>
-            <h1 className="text-5xl lg:text-7xl font-bold mb-8">Analyze Biotech</h1>
-            <p className="text-xl lg:text-2xl text-blue-100 leading-relaxed max-w-3xl">
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light text-blue-200 mb-3 sm:mb-4">About</h2>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-6 sm:mb-8">Analyze Biotech</h1>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-blue-100 leading-relaxed max-w-3xl">
               Founded in 2015, Analyze Biotech has emerged as a pioneering force in biotechnology innovation, developing cutting-edge diagnostic solutions that bridge the gap between advanced science and practical healthcare applications.
             </p>
-            <p className="text-lg lg:text-xl text-blue-100 leading-relaxed max-w-3xl mt-6">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-blue-100 leading-relaxed max-w-3xl mt-4 sm:mt-6">
               Our mission is to democratize access to precision diagnostics, enabling healthcare professionals worldwide to deliver faster, more accurate results that improve patient outcomes.
             </p>
           </motion.div>
@@ -102,9 +102,9 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="py-8 sm:py-12 md:py-16 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
