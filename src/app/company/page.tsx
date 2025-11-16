@@ -212,8 +212,8 @@ function CompanyPageContent() {
               </div>
               <div className="relative h-[300px] md:h-[400px] rounded-xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/background.jpg"
-                  alt="Corporate Office"
+                  src="/images/company-profile-1.jpg"
+                  alt="Corporate Office Headquarters"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -232,8 +232,8 @@ function CompanyPageContent() {
               </div>
               <div className="relative h-[300px] md:h-[400px] rounded-xl overflow-hidden shadow-xl md:col-start-1 md:row-start-1">
                 <Image
-                  src="/images/background.jpg"
-                  alt="Global Partnerships"
+                  src="/images/company-profile-2.jpg"
+                  alt="Innovation and Global Partnerships"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -260,8 +260,8 @@ function CompanyPageContent() {
               </div>
               <div className="relative h-[300px] md:h-[400px] rounded-xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/background.jpg"
-                  alt="Technical Support"
+                  src="/images/company-profile-3.jpg"
+                  alt="Customer-First Philosophy and Technical Support"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -318,8 +318,8 @@ function CompanyPageContent() {
               </div>
               <div className="relative h-[300px] md:h-[400px] rounded-xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/background.jpg"
-                  alt="Promoting Healthcare Access"
+                  src="/images/social-responsibility-1.jpg"
+                  alt="Promoting Healthcare Access and Medical Services"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -389,8 +389,8 @@ function CompanyPageContent() {
               </div>
               <div className="relative h-[300px] md:h-[400px] rounded-xl overflow-hidden shadow-xl md:col-start-1 md:row-start-1">
                 <Image
-                  src="/images/background.jpg"
-                  alt="Environmental Stewardship"
+                  src="/images/social-responsibility-2.jpg"
+                  alt="Environmental Stewardship and Sustainability"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -493,8 +493,8 @@ function CompanyPageContent() {
               </div>
               <div className="relative h-[350px] rounded-xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/background.jpg"
-                  alt="Strategic Leadership"
+                  src="/images/leadership-1.jpg"
+                  alt="Strategic Leadership Excellence in Healthcare"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -507,8 +507,8 @@ function CompanyPageContent() {
             <div className="grid md:grid-cols-2 gap-8 items-center animate-on-scroll md:grid-flow-dense">
               <div className="relative h-[350px] rounded-xl overflow-hidden shadow-xl md:col-start-1 md:row-start-1">
                 <Image
-                  src="/images/background.jpg"
-                  alt="Team Building"
+                  src="/images/leadership-2.jpg"
+                  alt="High-Performance Team Building in Healthcare"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -589,8 +589,8 @@ function CompanyPageContent() {
               </div>
               <div className="relative h-[350px] rounded-xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/background.jpg"
-                  alt="Change Leadership"
+                  src="/images/leadership-3.jpg"
+                  alt="Change Leadership and Sustainability"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -698,8 +698,8 @@ function CompanyPageContent() {
             {/* Hero Image */}
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-2xl animate-on-scroll">
               <Image
-                src="/images/background.jpg"
-                alt="Investment Opportunity"
+                src="/images/investor-4.jpg"
+                alt="Investment Opportunity in Healthcare Innovation"
                 fill
                 className="object-cover"
                 sizes="100vw"
@@ -734,8 +734,8 @@ function CompanyPageContent() {
               </div>
               <div className="relative h-[300px] rounded-xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/background.jpg"
-                  alt="Market Growth"
+                  src="/images/investor-1.jpg"
+                  alt="Thriving Market Landscape and Growth Opportunities"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -789,8 +789,8 @@ function CompanyPageContent() {
             <div className="grid md:grid-cols-2 gap-8 items-center animate-on-scroll md:grid-flow-dense">
               <div className="relative h-[300px] rounded-xl overflow-hidden shadow-xl md:col-start-1 md:row-start-1">
                 <Image
-                  src="/images/background.jpg"
-                  alt="Business Growth"
+                  src="/images/investor-2.jpg"
+                  alt="Proven Scalable Business Model"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -832,8 +832,8 @@ function CompanyPageContent() {
               </div>
               <div className="relative h-[300px] rounded-xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/background.jpg"
-                  alt="Sustainability"
+                  src="/images/investor-3.jpg"
+                  alt="Commitment to Sustainability and Social Impact"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -958,13 +958,12 @@ function CompanyPageContent() {
             {/* Hero Image */}
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-2xl animate-on-scroll">
               <Image
-                src="/images/background.jpg"
-                alt="Our Vision for Healthcare"
+                src="/images/vision-1.jpg"
+                alt="AI in Healthcare - Transforming diagnostic technology"
                 fill
                 className="object-cover"
                 sizes="100vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/80 to-indigo-600/80"></div>
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center text-white px-6">
                   <Target className="w-20 h-20 mx-auto mb-4" />
@@ -994,13 +993,12 @@ function CompanyPageContent() {
               </div>
               <div className="relative h-[300px] rounded-xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/background.jpg"
-                  alt="Innovation"
+                  src="/images/vision-2.jpg"
+                  alt="Pioneering Innovation in Healthcare Technology"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent"></div>
               </div>
             </div>
 
@@ -1008,13 +1006,12 @@ function CompanyPageContent() {
             <div className="grid md:grid-cols-2 gap-8 items-center animate-on-scroll md:grid-flow-dense">
               <div className="relative h-[300px] rounded-xl overflow-hidden shadow-xl md:col-start-1 md:row-start-1">
                 <Image
-                  src="/images/background.jpg"
-                  alt="Global Presence"
+                  src="/images/vision-3.jpg"
+                  alt="Expanding Global Healthcare Presence"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent"></div>
               </div>
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-xl shadow-lg border-l-4 border-blue-600 md:col-start-2">
                 <div className="flex items-center mb-4">
@@ -1051,13 +1048,12 @@ function CompanyPageContent() {
               </div>
               <div className="relative h-[300px] rounded-xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/background.jpg"
-                  alt="Industry Standards"
+                  src="/images/vision-4.jpg"
+                  alt="Setting Healthcare Industry Standards"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent"></div>
               </div>
             </div>
 
@@ -1065,13 +1061,12 @@ function CompanyPageContent() {
             <div className="grid md:grid-cols-2 gap-8 items-center animate-on-scroll md:grid-flow-dense">
               <div className="relative h-[300px] rounded-xl overflow-hidden shadow-xl md:col-start-1 md:row-start-1">
                 <Image
-                  src="/images/background.jpg"
-                  alt="Health Ecosystems"
+                  src="/images/vision-5.jpg"
+                  alt="Empowering Health Ecosystems and Communities"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent"></div>
               </div>
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-xl shadow-lg border-l-4 border-blue-600 md:col-start-2">
                 <div className="flex items-center mb-4">
@@ -1122,13 +1117,12 @@ function CompanyPageContent() {
             {/* Hero Image */}
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-2xl animate-on-scroll">
               <Image
-                src="/images/background.jpg"
-                alt="Our Mission"
+                src="/images/mission-1.jpg"
+                alt="Our Mission - Empowering Healthcare Worldwide"
                 fill
                 className="object-cover"
                 sizes="100vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600/80 to-pink-600/80"></div>
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center text-white px-6">
                   <Target className="w-20 h-20 mx-auto mb-4" />
@@ -1158,13 +1152,12 @@ function CompanyPageContent() {
               </div>
               <div className="relative h-[300px] rounded-xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/background.jpg"
-                  alt="Innovation"
+                  src="/images/mission-2.jpg"
+                  alt="Innovation - Hand holding lightbulb representing breakthrough ideas"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 to-transparent"></div>
               </div>
             </div>
 
@@ -1172,13 +1165,12 @@ function CompanyPageContent() {
             <div className="grid md:grid-cols-2 gap-8 items-center animate-on-scroll md:grid-flow-dense">
               <div className="relative h-[300px] rounded-xl overflow-hidden shadow-xl md:col-start-1 md:row-start-1">
                 <Image
-                  src="/images/background.jpg"
-                  alt="Accuracy and Efficiency"
+                  src="/images/mission-3.jpg"
+                  alt="Project Management Efficiency - Optimizing healthcare processes"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 to-transparent"></div>
               </div>
               <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-xl shadow-lg border-l-4 border-purple-600 md:col-start-2">
                 <div className="flex items-center mb-4">
@@ -1215,13 +1207,12 @@ function CompanyPageContent() {
               </div>
               <div className="relative h-[300px] rounded-xl overflow-hidden shadow-xl">
                 <Image
-                  src="/images/background.jpg"
-                  alt="Supporting Professionals"
+                  src="/images/mission-4.jpg"
+                  alt="Supporting Healthcare Professionals - Training and development strategies"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 to-transparent"></div>
               </div>
             </div>
 
@@ -1229,13 +1220,12 @@ function CompanyPageContent() {
             <div className="grid md:grid-cols-2 gap-8 items-center animate-on-scroll md:grid-flow-dense">
               <div className="relative h-[300px] rounded-xl overflow-hidden shadow-xl md:col-start-1 md:row-start-1">
                 <Image
-                  src="/images/background.jpg"
-                  alt="Sustainability"
+                  src="/images/mission-5.jpg"
+                  alt="Driving Sustainability - Environmental consciousness and eco-friendly practices"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/60 to-transparent"></div>
               </div>
               <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-xl shadow-lg border-l-4 border-purple-600 md:col-start-2">
                 <div className="flex items-center mb-4">
